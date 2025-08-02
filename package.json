@@ -28,6 +28,8 @@
         "build-nolog": "next build"
     },
     "dependencies": {
+        "@meshsdk/core": "^1.9.0-beta.0",
+        "@meshsdk/react": "^1.9.0-beta.0",
         "next": "15.3.1",
         "phaser": "^3.90.0",
         "react": "19.0.0",
@@ -37,6 +39,8 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
-        "typescript": "^5"
+        "typescript": "^5",
+        "postcss": "^8",
+        "tailwindcss": "^3.4.1"
     }
 }

@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { IRefPhaserGame, PhaserGame } from './PhaserGame';
 import { MainMenu } from './game/scenes/MainMenu';
+import { CardanoWallet } from '@meshsdk/react';
 
-function App()
-{
+function App() {
     // The sprite can only be moved in the MainMenu Scene
     const [canMoveSprite, setCanMoveSprite] = useState(true);
 
@@ -13,12 +13,10 @@ function App()
 
     const changeScene = () => {
 
-        if(phaserRef.current)
-        {     
+        if (phaserRef.current) {
             const scene = phaserRef.current.scene as MainMenu;
-            
-            if (scene)
-            {
+
+            if (scene) {
                 scene.changeScene();
             }
         }
@@ -26,13 +24,11 @@ function App()
 
     const moveSprite = () => {
 
-        if(phaserRef.current)
-        {
+        if (phaserRef.current) {
 
             const scene = phaserRef.current.scene as MainMenu;
 
-            if (scene && scene.scene.key === 'MainMenu')
-            {
+            if (scene && scene.scene.key === 'MainMenu') {
                 // Get the update logo position
                 scene.moveLogo(({ x, y }) => {
 
@@ -46,19 +42,17 @@ function App()
 
     const addSprite = () => {
 
-        if (phaserRef.current)
-        {
+        if (phaserRef.current) {
             const scene = phaserRef.current.scene;
 
-            if (scene)
-            {
+            if (scene) {
                 // Add more stars
                 const x = Phaser.Math.Between(64, scene.scale.width - 64);
                 const y = Phaser.Math.Between(64, scene.scale.height - 64);
-    
+
                 //  `add.sprite` is a Phaser GameObjectFactory method and it returns a Sprite Game Object instance
                 const star = scene.add.sprite(x, y, 'star');
-    
+
                 //  ... which you can then act upon. Here we create a Phaser Tween to fade the star sprite in and out.
                 //  You could, of course, do this from within the Phaser Scene code, but this is just an example
                 //  showing that Phaser objects and systems can be acted upon from outside of Phaser itself.
@@ -77,13 +71,16 @@ function App()
     const currentScene = (scene: Phaser.Scene) => {
 
         setCanMoveSprite(scene.scene.key !== 'MainMenu');
-        
+
     }
 
     return (
         <div id="app">
             <PhaserGame ref={phaserRef} currentActiveScene={currentScene} />
             <div>
+                <div>
+                    <CardanoWallet isDark={true} />
+                </div>
                 <div>
                     <button className="button" onClick={changeScene}>Change Scene</button>
                 </div>
