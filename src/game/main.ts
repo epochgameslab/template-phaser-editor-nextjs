@@ -4,9 +4,11 @@ import MainGame from './scenes/Game';
 import MainMenu from './scenes/MainMenu';
 import Preloader from './scenes/Preloader';
 import { AUTO, Game } from 'phaser';
+import Inventory from './scenes/Inventory';
 
 // Find out more information about the Game Config at:
 // https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
+
 const config: Phaser.Types.Core.GameConfig = {
     type: AUTO,
     width: 1024,
@@ -18,14 +20,23 @@ const config: Phaser.Types.Core.GameConfig = {
         Preloader,
         MainMenu,
         MainGame,
-        GameOver
+        GameOver,
+        Inventory,
     ]
 };
 
-const StartGame = (parent: string) => {
+const StartGame = (parent: string, walletData?: any) => {
 
-    return new Game({ ...config, parent });
-
+    return new Game({
+        ...config, callbacks: {
+            postBoot: (game) => {
+                if (walletData) {
+                    game.registry.set("walletData", walletData);
+                }
+            }
+        },
+        parent
+    });
 }
 
 export default StartGame;

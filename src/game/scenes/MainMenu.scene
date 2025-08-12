@@ -23,13 +23,11 @@
             "y": 384
         },
         {
-            "type": "Image",
+            "type": "Text",
             "id": "e5babb96-c526-40f4-94d3-ce0955d9767d",
             "label": "logo",
+            "displayName": "Legends of Ledger",
             "scope": "CLASS",
-            "texture": {
-                "key": "logo"
-            },
             "x": 512,
             "y": 384
         },
@@ -48,11 +46,27 @@
             "color": "#ffffff",
             "stroke": "#000000",
             "strokeThickness": 8
+        },
+        {
+            "type": "Text",
+            "id": "6fa55091-ad2c-4553-896c-24da129ae08c",
+            "label": "text_1",
+            "x": 520,
+            "y": 354,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Legends of Ledger",
+            "align": "center",
+            "fontFamily": "Impact",
+            "fontSize": "108px",
+            "color": "#ffffff",
+            "stroke": "#000000",
+            "strokeThickness": 8
         }
     ],
     "plainObjects": [],
     "meta": {
-        "app": "Phaser Editor 2D - Scene Editor",
+        "app": "Phaser Editor - Scene Editor",
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5

@@ -19,30 +19,41 @@
             "texture": {
                 "key": "background"
             },
-            "x": 512,
+            "x": 511,
             "y": 384,
             "alpha": 0.5
         },
         {
+            "type": "Rectangle",
+            "id": "1a3bae7d-d7b7-4d78-8a18-1c1707d5e805",
+            "label": "rectangle_1",
+            "displayName": "Wallet",
+            "x": 523,
+            "y": 426,
+            "isFilled": true,
+            "fillColor": "#49f665",
+            "strokeColor": "#028c00",
+            "lineWidth": 5,
+            "isStroked": true,
+            "width": 128,
+            "height": 128
+        },
+        {
             "type": "Text",
-            "id": "14c27edb-9072-4bd8-8db8-18bd78fefb3a",
-            "label": "text",
-            "x": 513,
-            "y": 384,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Make something fun!\nand share it with us:\nsupport@phaser.io",
-            "align": "center",
-            "fontFamily": "Arial Black",
-            "fontSize": "38px",
-            "color": "#ffffff",
-            "stroke": "#000000",
-            "strokeThickness": 8
+            "id": "d430f99a-910c-4804-8dd8-9941b7be2e8d",
+            "label": "text_mint",
+            "displayName": "mint",
+            "x": 493,
+            "y": 410,
+            "text": "MINT",
+            "fontFamily": "Impact",
+            "fontSize": "32px",
+            "color": "#000000ff"
         }
     ],
     "plainObjects": [],
     "meta": {
-        "app": "Phaser Editor 2D - Scene Editor",
+        "app": "Phaser Editor - Scene Editor",
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
